@@ -1,8 +1,13 @@
 require "formula"
 
-class Mlt < Formula
+# Documentation: https://github.com/Homebrew/homebrew/wiki/Formula-Cookbook
+#                /usr/local/Library/Contributions/example-formula.rb
+# PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
+
+class Mlt090 < Formula
   homepage "http://www.mltframework.org/"
   url "https://downloads.sourceforge.net/mlt/mlt/mlt-0.9.0.tar.gz"
+  version "0.9.0"
   sha1 "76bf18f4442801fae963c5a676d6626e383d1617"
 
   depends_on "pkg-config" => :build
@@ -35,5 +40,10 @@ class Mlt < Formula
 
     system "make"
     system "make", "install"
+  end
+
+  test do
+    system "#{bin}/melt --version"
+    system "#{bin}/melt color:black out=50 -consumer avformat:tmp.mkv vcodec=yuv4"
   end
 end
