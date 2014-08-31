@@ -13,7 +13,7 @@ class Mlt090 < Formula
   depends_on "pkg-config" => :build
 
   depends_on "atk"
-  depends_on "ffmpeg"
+  depends_on "ffmpeg124"
   depends_on "frei0r"
   depends_on "libdv"
   depends_on "libsamplerate"
